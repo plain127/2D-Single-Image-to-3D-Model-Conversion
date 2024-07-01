@@ -1,12 +1,8 @@
 # 2D Single Image to 3D Model Conversion
 
----
-
 ## Project
 
----
-
-[![Video Label](http://img.youtube.com/vi/Uc9-8pdljdM/0.jpg)](https://youtu.be/Uc9-8pdljdM)
+![detection](https://github.com/plain127/2D-Single-Image-to-3D-Model-Conversion/assets/98394884/46513aa7-b43b-4132-b4b1-9dc94f5dcdd6)
 
 - 2D 싱글 이미지에서 인공지능이 학습한 object들을 detect하고
 
@@ -17,8 +13,6 @@
   자동생성조립하는 시스템
 
 ## Purpose
-
----
 
 - 이미지를 입력하면 3D 모델로 출력하는 컴퓨터 비전과 딥러닝 기술이 연구되고 있지만
 
@@ -34,13 +28,9 @@
 
 ## FlowChart
 
----
-
 ![alt text](image.png)
 
 ## Model
-
----
 
 ### SSD ResNet101 V1 FPN 1024x1024(RetinaNet101)
 
@@ -63,8 +53,6 @@ training_demo/
 
 ## Dataset
 
----
-
 ```
 training_demo/
 ├─ annotations/
@@ -84,8 +72,6 @@ training_demo/
 
 ## Preprocessing
 
----
-
 - LabelImg tool 사용
 
 ```
@@ -102,8 +88,6 @@ python labelImg.py
 ```
 
 ## Train
-
----
 
 - train, test 데이터 분할
 
@@ -130,8 +114,6 @@ python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_co
 ```
 
 ## Reference paper and code
-
----
 
 <https://github.com/tensorflow/models/tree/master/research/object_detection>
 <https://paperswithcode.com/paper/ssd-single-shot-multibox-detector>
