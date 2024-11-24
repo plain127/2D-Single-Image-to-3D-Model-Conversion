@@ -1,9 +1,7 @@
 # 2D Single Image to 3D Model Conversion
-
-## Project
-
 ![detection](https://github.com/plain127/2D-Single-Image-to-3D-Model-Conversion/assets/98394884/46513aa7-b43b-4132-b4b1-9dc94f5dcdd6)
 
+## 프로젝트 소개
 - 2D 싱글 이미지에서 인공지능이 학습한 object들을 detect하고
 
   검출된 object class에 해당하는 3D 모델 데이터를
@@ -12,13 +10,13 @@
 
   자동생성조립하는 시스템
 
-## Purpose
+## 목적
 
 - 이미지를 입력하면 3D 모델로 출력하는 컴퓨터 비전과 딥러닝 기술이 연구되고 있지만
 
 단일 이미지에서 공간의 일그러짐이나 형태의 왜곡 없이 3D 모델을 출력하거나
 
-이미지 안에 대상 개체의 구성 요소를 빠트리지 않고 세세히 파악하여 3D 모델로 출력하는 시스템은 아직 존재하지 않는다.
+이미지 안에 정밀 대상 개체의 모든 구성 요소를 빠트리지 않고 세세히 파악하여 3D 모델로 출력하는 시스템은 아직 존재하지 않는다.
 
 - 많은 대상 개체 및 구성요소의 이미지 데이터를 학습시킨 model을 통해
 
@@ -26,12 +24,11 @@
 
 저장된 요소 데이터를 로드해 해당 개체가 미지의 존재여도 그 개체를 가상환경 내에 구현할 수 있도록 하는 것이 목적
 
-## FlowChart
+## 플로우 차트
 
 ![alt text](image.png)
 
-## Model
-
+## 모델
 ### SSD ResNet101 V1 FPN 1024x1024(RetinaNet101)
 
 ### Pre-Trained Model
@@ -51,7 +48,7 @@ training_demo/
 └─ ...
 ```
 
-## Dataset
+## 데이터 셋
 
 ```
 training_demo/
@@ -70,7 +67,7 @@ training_demo/
 - 전체 이미지 12,111장
 - 부품 3D 모델 8개
 
-## Preprocessing
+## 전처리
 
 - LabelImg tool 사용
 
@@ -87,9 +84,9 @@ python labelImg.py
   }
 ```
 
-## Train
+## 훈련
 
-- train, test 데이터 분할
+- train, test holdout
 
 ```
 python partition_dataset.py -x -i [PATH_TO_IMAGES_FOLDER] -r 0.1
@@ -113,7 +110,7 @@ python generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/test -l [PATH_TO_ANNOTATI
 python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet101_v1_fpn/pipeline.config
 ```
 
-## Reference paper and code
+## 레퍼런스
 
 <https://github.com/tensorflow/models/tree/master/research/object_detection>
 <https://paperswithcode.com/paper/ssd-single-shot-multibox-detector>
